@@ -23,14 +23,14 @@ class Home extends React.Component{
         let header = (
             <button onClick={() => this.changePage('home')}>Home</button>
         );
-        if (this.state.pageID == "login"){
+        if (this.state.pageID.toString() === "login"){
             return (
                 <>
                     {header}
                     <Login />
                 </>
             );
-        }else if (this.state.pageID == "register"){
+        }else if (this.state.pageID.toString() === "register"){
             return (
                 <>
                     {header}

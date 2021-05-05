@@ -1,19 +1,19 @@
 import React from 'react'
 
-class Login extends React.Component{
+// class Login extends React.Component{
 
-    constructor(props){
-        super(props)
-    }
+//     // constructor(props){
+//     //     super(props)
+//     // }
 
-    render(){
-        if(this.props.isLoggedin){
-            return <UserDashboard/>
-        }else{
-            return <UserLogin/>
-        }
-    }
-}
+//     render(){
+//         if(this.props.isLoggedin){
+//             return <UserDashboard/>
+//         }else{
+//             return <UserLogin/>
+//         }
+//     }
+// }
 
 
 function UserLogin(props){

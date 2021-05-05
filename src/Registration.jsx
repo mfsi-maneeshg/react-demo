@@ -18,42 +18,42 @@ class Registration extends React.Component{
     }
 
     getFormValue(e){
-        let fvalue = e.target.value; 
+        let fName = e.target.name.toString();
         let inputFieldComponent = {
-            value :fvalue,
+            value :e.target.value,
             isValid : true,
-            errorMessage : ""
+            errorMessage : ''
         };
-        if(e.target.name == "name"){
+        if(fName === 'name'){
             this.setState({name:inputFieldComponent});
-        }else if(e.target.name == "email"){
+        }else if(fName === 'email'){
             this.setState({email:inputFieldComponent});
-        }else if(e.target.name == "phone"){
+        }else if(fName === 'phone'){
             this.setState({phone:inputFieldComponent});
-        }else if(e.target.name == "password"){
+        }else if(fName === 'password'){
             this.setState({password:inputFieldComponent});
         }
 
     }
     submitRegistrationDetail(e){
         //-------- Name validation
-        if(this.state.name.value == ""){
-            this.setState({name:{isValid:false,errorMessage:"FullName can not be empty"}});
+        if(!this.state.name.value){
+            this.setState({name:{isValid:false,errorMessage:'FullName can not be empty'}});
         }
 
         //-------- Email validation
-        if(this.state.email.value == ""){
-            this.setState({email:{isValid:false,errorMessage:"Email Address can not be empty"}});
+        if(!this.state.email.value){
+            this.setState({email:{isValid:false,errorMessage:'Email Address can not be empty'}});
         }
 
         //-------- Phone validation
-        if(this.state.phone.value == ""){
-            this.setState({phone:{isValid:false,errorMessage:"Phone Number can not be empty"}});
+        if(!this.state.phone.value){
+            this.setState({phone:{isValid:false,errorMessage:'Phone Number can not be empty'}});
         }
 
         //-------- Password validation
-        if(this.state.password.value == ""){
-            this.setState({password:{isValid:false,errorMessage:"Password can not be empty"}});
+        if(!this.state.password.value){
+            this.setState({password:{isValid:false,errorMessage:'Password can not be empty'}});
         }
         console.log(this.state);
         e.preventDefault();
@@ -86,7 +86,7 @@ class Registration extends React.Component{
                                 <td><ValidationError filedInfo={this.state.password}/></td>
                             </tr>
                             <tr>
-                                <td><input type="submit" value="Submit"/></td>
+                                <td><input type="submit" value="Submit Details"/></td>
                             </tr>
                         </table>
                     </form>
